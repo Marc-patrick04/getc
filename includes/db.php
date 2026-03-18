@@ -6,12 +6,18 @@ class Database {
     
     public function __construct() {
         try {
-            $this->pdo = new PDO(
-                "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
-                DB_USER,
-                DB_PASS,
-                [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-            );
+            // Try hosting connection first, fall back to local if it fails
+            try {
+                $this->pdo = new PDO(PG_HOSTING_CONNECTION, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+            } catch (PDOException $hostingError) {
+                // Fall back to local database
+                $this->pdo = new PDO(
+                    "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
+                    DB_USER,
+                    DB_PASS,
+                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                );
+            }
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }

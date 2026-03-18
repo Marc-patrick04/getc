@@ -5,6 +5,9 @@ define('DB_NAME', 'getc_ltd');
 define('DB_USER', 'postgres');
 define('DB_PASS', 'numugisha');
 
+// PostgreSQL hosting connection string
+define('PG_HOSTING_CONNECTION', 'postgresql://neondb_owner:npg_1Ph7cfQdlOSi@ep-dry-fire-ads2x4xy-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require');
+
 // Site configuration
 define('SITE_NAME', 'GETC Ltd');
 define('SITE_URL', 'http://localhost/getc-website');
