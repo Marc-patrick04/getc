@@ -11,12 +11,17 @@ class Database {
                 $this->pdo = new PDO(PG_HOSTING_CONNECTION, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
             } catch (PDOException $hostingError) {
                 // Fall back to local database
-                $this->pdo = new PDO(
-                    "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
-                    DB_USER,
-                    DB_PASS,
-                    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-                );
+                try {
+                    $this->pdo = new PDO(
+                        "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
+                        DB_USER,
+                        DB_PASS,
+                        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                    );
+                } catch (PDOException $localError) {
+                    // If both fail, show the hosting error (more relevant for production)
+                    die("Connection failed: " . $hostingError->getMessage());
+                }
             }
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
