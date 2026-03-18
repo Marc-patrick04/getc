@@ -1,0 +1,769 @@
+/* ==========================================
+   TABLE STYLES
+   ========================================== */
+
+/* Basic Table Structure */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #495057;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* Table Containers */
+.table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem;
+}
+
+/* Image Styles */
+.table-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Badge Styles */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid #dee2e6;
+}
+
+.category-badge {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.source-badge {
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Button Styles */
+.btn-table {
+    background: none;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+}
+
+.btn-table:hover {
+    background: #f8f9fa;
+    border-color: #90caf9;
+    color: #1565c0;
+}
+
+/* Checkbox Styles */
+.select-all, .select-item {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Drag Handle */
+.drag-handle {
+    cursor: grab;
+    text-align: center;
+    color: #6c757d;
+}
+
+.drag-handle:hover {
+    color: var(--primary-blue);
+}
+
+/* Order Input */
+.order-input {
+    width: 60px;
+    padding: 6px 8px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.order-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* ==========================================
+   UNIFIED MOBILE RESPONSIVE TABLE STYLES
+   ========================================== */
+
+/* Mobile Menu Toggle Styles */
+@media (max-width: 768px) {
+    /* All Table Containers - Enable Horizontal Scrolling */
+    .projects-table-container,
+    .feedback-table-container,
+    .videos-table-container,
+    .team-table-container,
+    .product-table-container,
+    .service-table-container,
+    .hero-table-container,
+    .about-table-container,
+    .settings-table-container {
+        background: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: 70vh;
+        margin: 1rem;
+    }
+
+    /* All Tables - Unified Mobile Styling */
+    .projects-table,
+    .feedback-table,
+    .videos-table,
+    .team-table,
+    .product-table,
+    .service-table,
+    .hero-table,
+    .about-table,
+    .settings-table {
+        width: 100%;
+        min-width: 1000px; /* Ensure all columns have space */
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    /* Table Headers - Unified Styling */
+    .projects-table th,
+    .feedback-table th,
+    .videos-table th,
+    .team-table th,
+    .product-table th,
+    .service-table th,
+    .hero-table th,
+    .about-table th,
+    .settings-table th {
+        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 2px solid #dee2e6;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        color: #495057;
+        padding: 12px 8px;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    /* Table Body - Unified Styling */
+    .projects-table td,
+    .feedback-table td,
+    .videos-table td,
+    .team-table td,
+    .product-table td,
+    .service-table td,
+    .hero-table td,
+    .about-table td,
+    .settings-table td {
+        padding: 12px 8px;
+        border-bottom: 1px solid #f0f0f0;
+        vertical-align: middle;
+        background: white;
+    }
+
+    .projects-table tbody tr:hover,
+    .feedback-table tbody tr:hover,
+    .videos-table tbody tr:hover,
+    .team-table tbody tr:hover,
+    .product-table tbody tr:hover,
+    .service-table tbody tr:hover,
+    .hero-table tbody tr:hover,
+    .about-table tbody tr:hover,
+    .settings-table tbody tr:hover {
+        background: #f8f9fa;
+    }
+
+    /* ==========================================
+       COLUMN-SPECIFIC MOBILE STYLING
+       ========================================== */
+
+    /* Checkbox Column (Column 1) */
+    .projects-table th:nth-child(1),
+    .feedback-table th:nth-child(1),
+    .videos-table th:nth-child(1),
+    .team-table th:nth-child(1),
+    .product-table th:nth-child(1),
+    .service-table th:nth-child(1),
+    .hero-table th:nth-child(1),
+    .about-table th:nth-child(1),
+    .settings-table th:nth-child(1),
+    .projects-table td:nth-child(1),
+    .feedback-table td:nth-child(1),
+    .videos-table td:nth-child(1),
+    .team-table td:nth-child(1),
+    .product-table td:nth-child(1),
+    .service-table td:nth-child(1),
+    .hero-table td:nth-child(1),
+    .about-table td:nth-child(1),
+    .settings-table td:nth-child(1) {
+        width: auto;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    /* Drag Handle Column (Column 2) */
+    .projects-table th:nth-child(2),
+    .feedback-table th:nth-child(2),
+    .videos-table th:nth-child(2),
+    .team-table th:nth-child(2),
+    .product-table th:nth-child(2),
+    .service-table th:nth-child(2),
+    .hero-table th:nth-child(2),
+    .about-table th:nth-child(2),
+    .settings-table th:nth-child(2),
+    .projects-table td:nth-child(2),
+    .feedback-table td:nth-child(2),
+    .videos-table td:nth-child(2),
+    .team-table td:nth-child(2),
+    .product-table td:nth-child(2),
+    .service-table td:nth-child(2),
+    .hero-table td:nth-child(2),
+    .about-table td:nth-child(2),
+    .settings-table td:nth-child(2) {
+        width: auto;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    /* Image/Thumbnail Column (Column 3) */
+    .projects-table th:nth-child(3),
+    .feedback-table th:nth-child(3),
+    .videos-table th:nth-child(3),
+    .team-table th:nth-child(3),
+    .product-table th:nth-child(3),
+    .service-table th:nth-child(3),
+    .hero-table th:nth-child(3),
+    .about-table th:nth-child(3),
+    .settings-table th:nth-child(3),
+    .projects-table td:nth-child(3),
+    .feedback-table td:nth-child(3),
+    .videos-table td:nth-child(3),
+    .team-table td:nth-child(3),
+    .product-table td:nth-child(3),
+    .service-table td:nth-child(3),
+    .hero-table td:nth-child(3),
+    .about-table td:nth-child(3),
+    .settings-table td:nth-child(3) {
+        width: auto;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    /* Title/Name Column (Column 4) */
+    .projects-table th:nth-child(4),
+    .feedback-table th:nth-child(4),
+    .videos-table th:nth-child(4),
+    .team-table th:nth-child(4),
+    .product-table th:nth-child(4),
+    .service-table th:nth-child(4),
+    .hero-table th:nth-child(4),
+    .about-table th:nth-child(4),
+    .settings-table th:nth-child(4),
+    .projects-table td:nth-child(4),
+    .feedback-table td:nth-child(4),
+    .videos-table td:nth-child(4),
+    .team-table td:nth-child(4),
+    .product-table td:nth-child(4),
+    .service-table td:nth-child(4),
+    .hero-table td:nth-child(4),
+    .about-table td:nth-child(4),
+    .settings-table td:nth-child(4) {
+        width: 200px;
+        min-width: 150px;
+    }
+
+    /* Category/Position/Type Column (Column 5) */
+    .projects-table th:nth-child(5),
+    .feedback-table th:nth-child(5),
+    .videos-table th:nth-child(5),
+    .team-table th:nth-child(5),
+    .product-table th:nth-child(5),
+    .service-table th:nth-child(5),
+    .hero-table th:nth-child(5),
+    .about-table th:nth-child(5),
+    .settings-table th:nth-child(5),
+    .projects-table td:nth-child(5),
+    .feedback-table td:nth-child(5),
+    .videos-table td:nth-child(5),
+    .team-table td:nth-child(5),
+    .product-table td:nth-child(5),
+    .service-table td:nth-child(5),
+    .hero-table td:nth-child(5),
+    .about-table td:nth-child(5),
+    .settings-table td:nth-child(5) {
+        width: 80px;
+        min-width: 60px;
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    /* Status/Description/Content Column (Column 6) */
+    .projects-table th:nth-child(6),
+    .feedback-table th:nth-child(6),
+    .videos-table th:nth-child(6),
+    .team-table th:nth-child(6),
+    .product-table th:nth-child(6),
+    .service-table th:nth-child(6),
+    .hero-table th:nth-child(6),
+    .about-table th:nth-child(6),
+    .settings-table th:nth-child(6),
+    .projects-table td:nth-child(6),
+    .feedback-table td:nth-child(6),
+    .videos-table td:nth-child(6),
+    .team-table td:nth-child(6),
+    .product-table td:nth-child(6),
+    .service-table td:nth-child(6),
+    .hero-table td:nth-child(6),
+    .about-table td:nth-child(6),
+    .settings-table td:nth-child(6) {
+        width: 80px;
+        min-width: 60px;
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    /* Date/Actions Column (Column 7) */
+    .projects-table th:nth-child(7),
+    .feedback-table th:nth-child(7),
+    .videos-table th:nth-child(7),
+    .team-table th:nth-child(7),
+    .product-table th:nth-child(7),
+    .service-table th:nth-child(7),
+    .hero-table th:nth-child(7),
+    .about-table th:nth-child(7),
+    .settings-table th:nth-child(7),
+    .projects-table td:nth-child(7),
+    .feedback-table td:nth-child(7),
+    .videos-table td:nth-child(7),
+    .team-table td:nth-child(7),
+    .product-table td:nth-child(7),
+    .service-table td:nth-child(7),
+    .hero-table td:nth-child(7),
+    .about-table td:nth-child(7),
+    .settings-table td:nth-child(7) {
+        width: 80px;
+        min-width: 60px;
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    /* Actions Column (Column 8+) */
+    .projects-table th:nth-child(8),
+    .feedback-table th:nth-child(8),
+    .videos-table th:nth-child(8),
+    .team-table th:nth-child(8),
+    .product-table th:nth-child(8),
+    .service-table th:nth-child(8),
+    .hero-table th:nth-child(8),
+    .about-table th:nth-child(8),
+    .settings-table th:nth-child(8),
+    .projects-table td:nth-child(8),
+    .feedback-table td:nth-child(8),
+    .videos-table td:nth-child(8),
+    .team-table td:nth-child(8),
+    .product-table td:nth-child(8),
+    .service-table td:nth-child(8),
+    .hero-table td:nth-child(8),
+    .about-table td:nth-child(8),
+    .settings-table td:nth-child(8),
+    .projects-table th:nth-child(9),
+    .feedback-table th:nth-child(9),
+    .videos-table th:nth-child(9),
+    .team-table th:nth-child(9),
+    .product-table th:nth-child(9),
+    .service-table th:nth-child(9),
+    .hero-table th:nth-child(9),
+    .about-table th:nth-child(9),
+    .settings-table th:nth-child(9),
+    .projects-table td:nth-child(9),
+    .feedback-table td:nth-child(9),
+    .videos-table td:nth-child(9),
+    .team-table td:nth-child(9),
+    .product-table td:nth-child(9),
+    .service-table td:nth-child(9),
+    .hero-table td:nth-child(9),
+    .about-table td:nth-child(9),
+    .settings-table td:nth-child(9),
+    .projects-table th:nth-child(10),
+    .feedback-table th:nth-child(10),
+    .videos-table th:nth-child(10),
+    .team-table th:nth-child(10),
+    .product-table th:nth-child(10),
+    .service-table th:nth-child(10),
+    .hero-table th:nth-child(10),
+    .about-table th:nth-child(10),
+    .settings-table th:nth-child(10),
+    .projects-table td:nth-child(10),
+    .feedback-table td:nth-child(10),
+    .videos-table td:nth-child(10),
+    .team-table td:nth-child(10),
+    .product-table td:nth-child(10),
+    .service-table td:nth-child(10),
+    .hero-table td:nth-child(10),
+    .about-table td:nth-child(10),
+    .settings-table td:nth-child(10) {
+        width: 80px;
+        min-width: 60px;
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    /* ==========================================
+       TITLE TEXT ADJUSTMENTS
+       ========================================== */
+    .projects-table td:nth-child(4) strong,
+    .feedback-table td:nth-child(4) strong,
+    .videos-table td:nth-child(4) strong,
+    .team-table td:nth-child(4) strong,
+    .product-table td:nth-child(4) strong,
+    .service-table td:nth-child(4) strong,
+    .hero-table td:nth-child(4) strong,
+    .about-table td:nth-child(4) strong,
+    .settings-table td:nth-child(4) strong {
+        font-size: 13px;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
+    }
+
+    .projects-table td:nth-child(4) div,
+    .feedback-table td:nth-child(4) div,
+    .videos-table td:nth-child(4) div,
+    .team-table td:nth-child(4) div,
+    .product-table td:nth-child(4) div,
+    .service-table td:nth-child(4) div,
+    .hero-table td:nth-child(4) div,
+    .about-table td:nth-child(4) div,
+    .settings-table td:nth-child(4) div {
+        display: none; /* Hide description on very small screens */
+    }
+
+    /* ==========================================
+       BADGE AND ELEMENT ADJUSTMENTS
+       ========================================== */
+    .category-badge,
+    .duration-badge,
+    .video-source-badge,
+    .status-badge,
+    .featured-badge,
+    .position-badge,
+    .type-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+        white-space: nowrap;
+    }
+
+    .views-count,
+    .rating-stars,
+    .date-info {
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .order-input {
+        width: 45px;
+        padding: 4px 6px;
+        font-size: 11px;
+    }
+
+    /* ==========================================
+       IMAGE SIZE ADJUSTMENTS
+       ========================================== */
+    .project-image,
+    .customer-image,
+    .video-thumbnail,
+    .member-image,
+    .product-image,
+    .service-image,
+    .hero-image,
+    .team-image {
+        width: 60px;
+        height: 45px;
+    }
+
+    .member-initials,
+    .customer-initials {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* ==========================================
+       BUTTON ADJUSTMENTS
+       ========================================== */
+    .btn-add,
+    .btn-delete-selected {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-edit,
+    .btn-delete,
+    .btn-toggle,
+    .btn-gallery,
+    .btn-view,
+    .btn-approve,
+    .btn-reject,
+    .btn-feature,
+    .btn-reply,
+    .btn-play {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        min-width: 30px;
+        height: 30px;
+    }
+
+    /* ==========================================
+       SPECIALIZED TABLE ADJUSTMENTS
+       ========================================== */
+
+    /* Feedback Table Specific */
+    .feedback-table td:nth-child(2) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    .feedback-table td:nth-child(3) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .feedback-table td:nth-child(4) {
+        width: 200px;
+        min-width: 150px;
+    }
+
+    /* Video Table Specific */
+    .videos-table td:nth-child(4) {
+        width: 180px;
+        min-width: 140px;
+    }
+
+    .videos-table td:nth-child(5) {
+        width: 100px;
+        min-width: 80px;
+    }
+
+    .videos-table td:nth-child(6) {
+        width: 80px;
+        min-width: 60px;
+    }
+
+    .videos-table td:nth-child(7) {
+        width: 100px;
+        min-width: 80px;
+    }
+
+    /* Team Table Specific */
+    .team-table td:nth-child(4) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .team-table td:nth-child(5) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    /* Product Table Specific */
+    .product-table td:nth-child(4) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .product-table td:nth-child(5) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    /* Service Table Specific */
+    .service-table td:nth-child(4) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .service-table td:nth-child(5) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    /* Project Table Specific */
+    .projects-table td:nth-child(4) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .projects-table td:nth-child(5) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    .projects-table td:nth-child(6) {
+        width: 100px;
+        min-width: 80px;
+    }
+
+    /* Hero Table Specific */
+    .hero-table td:nth-child(4) {
+        width: 150px;
+        min-width: 120px;
+    }
+
+    .hero-table td:nth-child(5) {
+        width: 120px;
+        min-width: 100px;
+    }
+
+    /* ==========================================
+       SMALL SCREEN OPTIMIZATIONS (480px and below)
+       ========================================== */
+    @media (max-width: 480px) {
+        .projects-table,
+        .feedback-table,
+        .videos-table,
+        .team-table,
+        .product-table,
+        .service-table,
+        .hero-table,
+        .about-table,
+        .settings-table {
+            min-width: 900px;
+        }
+
+        /* Further optimize column widths for very small screens */
+        .projects-table th:nth-child(4),
+        .feedback-table th:nth-child(4),
+        .videos-table th:nth-child(4),
+        .team-table th:nth-child(4),
+        .product-table th:nth-child(4),
+        .service-table th:nth-child(4),
+        .hero-table th:nth-child(4),
+        .about-table th:nth-child(4),
+        .settings-table th:nth-child(4),
+        .projects-table td:nth-child(4),
+        .feedback-table td:nth-child(4),
+        .videos-table td:nth-child(4),
+        .team-table td:nth-child(4),
+        .product-table td:nth-child(4),
+        .service-table td:nth-child(4),
+        .hero-table td:nth-child(4),
+        .about-table td:nth-child(4),
+        .settings-table td:nth-child(4) {
+            width: 160px;
+            min-width: 120px;
+        }
+
+        /* Reduce font sizes further */
+        .projects-table td,
+        .feedback-table td,
+        .videos-table td,
+        .team-table td,
+        .product-table td,
+        .service-table td,
+        .hero-table td,
+        .about-table td,
+        .settings-table td {
+            font-size: 12px;
+            padding: 6px 4px;
+        }
+
+        /* Adjust title text for very small screens */
+        .projects-table td:nth-child(4) strong,
+        .feedback-table td:nth-child(4) strong,
+        .videos-table td:nth-child(4) strong,
+        .team-table td:nth-child(4) strong,
+        .product-table td:nth-child(4) strong,
+        .service-table td:nth-child(4) strong,
+        .hero-table td:nth-child(4) strong,
+        .about-table td:nth-child(4) strong,
+        .settings-table td:nth-child(4) strong {
+            max-width: 140px;
+            font-size: 12px;
+        }
+
+        /* Further reduce badge sizes */
+        .category-badge,
+        .duration-badge,
+        .video-source-badge,
+        .status-badge,
+        .featured-badge,
+        .position-badge,
+        .type-badge {
+            font-size: 9px;
+            padding: 1px 5px;
+        }
+
+        /* Reduce button sizes */
+        .btn-edit,
+        .btn-delete,
+        .btn-toggle,
+        .btn-gallery,
+        .btn-view,
+        .btn-approve,
+        .btn-reject,
+        .btn-feature,
+        .btn-reply,
+        .btn-play {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.5rem;
+            min-width: 25px;
+            height: 25px;
+        }
+    }
+}
