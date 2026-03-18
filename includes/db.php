@@ -6,21 +6,38 @@ class Database {
     
     public function __construct() {
         try {
-            // Try hosting connection first, fall back to local if it fails
-            try {
-                $this->pdo = new PDO(PG_HOSTING_CONNECTION, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-            } catch (PDOException $hostingError) {
-                // Fall back to local database
+            // Check if we're in production (hosting environment)
+            $isProduction = !file_exists('C:\xampp\htdocs\getc');
+            
+            if ($isProduction) {
+                // Production environment - use hosting database
                 try {
                     $this->pdo = new PDO(
-                        "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
-                        DB_USER,
-                        DB_PASS,
+                        "pgsql:host=" . PROD_DB_HOST . ";dbname=" . PROD_DB_NAME,
+                        PROD_DB_USER,
+                        PROD_DB_PASS,
                         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
                     );
-                } catch (PDOException $localError) {
-                    // If both fail, show the hosting error (more relevant for production)
-                    die("Connection failed: " . $hostingError->getMessage());
+                } catch (PDOException $e) {
+                    die("Production database connection failed: " . $e->getMessage());
+                }
+            } else {
+                // Local development environment - try hosting first, then local
+                try {
+                    $this->pdo = new PDO(PG_HOSTING_CONNECTION, null, null, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+                } catch (PDOException $hostingError) {
+                    // Fall back to local database
+                    try {
+                        $this->pdo = new PDO(
+                            "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME,
+                            DB_USER,
+                            DB_PASS,
+                            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+                        );
+                    } catch (PDOException $localError) {
+                        // If both fail, show the hosting error (more relevant for production)
+                        die("Connection failed: " . $hostingError->getMessage());
+                    }
                 }
             }
         } catch (PDOException $e) {
